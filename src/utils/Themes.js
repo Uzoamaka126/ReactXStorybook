@@ -26,14 +26,14 @@ export const defaultTheme = {
 }
 
 export const darkTheme = {
-    primaryColor: blue[300],
-    primaryColorHover: blue[200],
-    primaryColorActive: blue[100],
-    textColorOnPrimary: neutral[300],
-    textColor: neutral[500],
+    primaryColor: neutral[100],
+    primaryColorHover: neutral[200],
+    primaryColorActive: neutral[300],
+    textColorOnPrimary: blue[300],
+    textColor: blue[300],
     textColorInverted: neutral[400],
     primaryFont: primaryFont,
-    disabled: neutral[200],
+    disabled: neutral[300],
     textOnDisabled: neutral[300],
     status: {
         warningColor: yellow[100],
