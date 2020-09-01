@@ -12,6 +12,8 @@ export const defaultTheme = {
     primaryFont: primaryFont,
     disabled: neutral[200],
     textOnDisabled: neutral[300],
+    formElementBackground: neutral[100],
+    textOnFormElementBackground: neutral[100],
     status: {
         warningColor: yellow[100],
         warningColorHover: yellow[200],

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { 
   PrimaryButton, 
   SecondaryButton,
-  TertiaryButton
-} from './components/StyledButton';
+  TertiaryButton,
+  SignupModal
+} from './components';
 import { GlobalStyles, darkTheme, defaultTheme } from './utils'
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
         <PrimaryButton modifiers={["small", "warning"]}>Hello World</PrimaryButton>
         <SecondaryButton modifiers={["large", "warning", "secondaryButtonWarning"]}>Hello World</SecondaryButton>
         <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>Hello World</TertiaryButton>
+        <SignupModal />
         <GlobalStyles />
         </div>
       </div>
