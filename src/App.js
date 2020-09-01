@@ -10,9 +10,9 @@ import { GlobalStyles } from './utils'
 function App() {
   return (
     <div className="App">
-     <PrimaryButton>Hello World</PrimaryButton>
-     <SecondaryButton>Hello World</SecondaryButton>
-     <TertiaryButton>Hello World</TertiaryButton>
+     <PrimaryButton modifiers={["small", "warning"]}>Hello World</PrimaryButton>
+     <SecondaryButton modifiers={["large", "warning", "secondaryButtonModifiers"]}>Hello World</SecondaryButton>
+     <TertiaryButton modifiers={["large", "warning"]}>Hello World</TertiaryButton>
      <GlobalStyles />
     </div>
   );

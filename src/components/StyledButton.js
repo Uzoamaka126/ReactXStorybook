@@ -12,6 +12,73 @@ const BUTTON_MODIFIERS = {
         font-size: ${typeScale.h5};
         padding: 16px 24px;
     `,
+    warning: () => `
+        background-color: ${defaultTheme.status.warningColor};
+        color: ${defaultTheme.textColorInverted};
+
+        &:hover, &:focus {
+            background-color: ${defaultTheme.status.warningColorHover};
+            outline: 3px solid ${defaultTheme.status.warningColorHover};
+        }
+
+        &:active {
+            background-color: ${defaultTheme.status.warningColorActive};
+            outline: 3px solid ${defaultTheme.status.warningColorHover};
+        }
+    `,
+    secondaryWarningButton: () => `
+        background: none;
+        border: 2px solid ${defaultTheme.status.warningColor};
+        color: ${defaultTheme.status.warningColor};
+    `,
+    tertiaryWarningButton: () => `
+        background: none;
+        color: ${defaultTheme.status.warningColor};
+    `,
+    success: () => `
+        background-color: ${defaultTheme.status.successColor};
+        color: ${defaultTheme.textColorInverted};
+
+        &:hover, &:focus {
+            background-color: ${defaultTheme.status.successColorHover};
+            outline: 3px solid ${defaultTheme.status.successColorHover};
+        }
+
+        &:active {
+            background-color: ${defaultTheme.status.warningColorActive};
+            outline: 3px solid ${defaultTheme.status.warningColorHover};
+        }
+    `,
+    primaryButtonSuccess: () => `
+        background-color: ${defaultTheme.status.successColor};
+        color: ${defaultTheme.textColorInverted};
+    `,
+    secondaryButtonSuccess: () => `
+        background: none;
+        border: 2px solid ${defaultTheme.status.successColor};
+        color: ${defaultTheme.status.successColor};
+    `,
+    error: () => `
+        background-color: ${defaultTheme.status.errorColor};
+        color: ${defaultTheme.textColorInverted};
+
+        &:hover, &:focus {
+            background-color: ${defaultTheme.status.errorColorHover};
+        }
+
+        &:active {
+            background-color: ${defaultTheme.status.errorColorActive};
+        }
+    `,
+    secondaryErrorButton: () => `
+        background: none;
+        border: 2px solid ${defaultTheme.status.errorColor};
+        color: ${defaultTheme.status.errorColor};
+    `,
+    tertiaryErrorButton: () => `
+        background: none;
+        color: ${defaultTheme.status.errorColor};
+    `,
 };
 
 const Button = styled.button`
