@@ -28,42 +28,42 @@ const BUTTON_MODIFIERS = {
     `,
     secondaryWarningButton: ({ props }) => `
         background: none;
-        border: 2px solid ${props.status.warningColor};
-        color: ${props.status.warningColor};
+        border: 2px solid ${props.theme.status.warningColor};
+        color: ${props.theme.status.warningColor};
     `,
     tertiaryWarningButton: ({ props }) => `
         background: none;
-        color: ${props.status.warningColor};
+        color: ${props.theme.status.warningColor};
     `,
     success: ({ props }) => `
-        background-color: ${props.status.successColor};
+        background-color: ${props.theme.status.successColor};
         color: ${props.textColorInverted};
 
         &:hover, &:focus {
-            background-color: ${props.status.successColorHover};
-            outline: 3px solid ${props.status.successColorHover};
+            background-color: ${props.theme.status.successColorHover};
+            outline: 3px solid ${props.theme.status.successColorHover};
         }
 
         &:active {
-            background-color: ${props.status.warningColorActive};
-            outline: 3px solid ${props.status.warningColorHover};
+            background-color: ${props.theme.status.warningColorActive};
+            outline: 3px solid ${props.theme.status.warningColorHover};
         }
     `,
     primaryButtonSuccess: ({ props }) => `
-        background-color: ${props.status.successColor};
+        background-color: ${props.theme.status.successColor};
         color: ${props.textColorInverted};
     `,
     secondaryButtonSuccess: ({ props }) => `
         background: none;
-        border: 2px solid ${props.status.successColor};
-        color: ${props.status.successColor};
+        border: 2px solid ${props.theme.status.successColor};
+        color: ${props.theme.status.successColor};
     `,
     error: ({ props }) => `
-        background-color: ${props.status.errorColor};
+        background-color: ${props.theme.status.errorColor};
         color: ${props.textColorInverted};
 
         &:hover, &:focus {
-            background-color: ${props.status.errorColorHover};
+            background-color: ${props.theme.status.errorColorHover};
         }
 
         &:active {
@@ -72,12 +72,12 @@ const BUTTON_MODIFIERS = {
     `,
     secondaryErrorButton: ({ props }) => `
         background: none;
-        border: 2px solid ${props.status.errorColor};
-        color: ${props.status.errorColor};
+        border: 2px solid ${props.theme.status.errorColor};
+        color: ${props.theme.status.errorColor};
     `,
     tertiaryErrorButton: ({ props }) => `
         background: none;
-        color: ${props.status.errorColor};
+        color: ${props.theme.status.errorColor};
     `,
 };
 
@@ -108,43 +108,40 @@ const Button = styled.button`
 `;
 
 export const PrimaryButton = styled(Button)`
-    background-color: ${props => props.primaryColor};
-    border: none;
-    color: white
+  background-color: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.textColorOnPrimary};
+  border: 2px solid transparent;
 
-    &:disabled {
-        background-color: ${props => props.disabled};
-        color: ${props => props.textColorOnDisabled};
-        cursor: not-allowed;
-    }
+  &:disabled {
+    background-color: ${props => props.theme.disabled};
+    color: ${props => props.theme.textOnDisabled};
+    cursor: not-allowed;
+  }
 
-    ${applyStyleModifiers(BUTTON_MODIFIERS)};
+  ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;
 
 export const SecondaryButton = styled(Button)`
+  border: 2px solid ${props => props.theme.primaryColor};
+  background: none;
+  color: ${props => props.theme.primaryColor};
+  
+  &:disabled {
     background: none;
-    border: 2px solid ${props => props.primaryColor};
-    color: ${props => props.primaryColor}
-
-    &:disabled {
-        background: none;
-        color: ${props => props.disabled};
-        cursor: not-allowed;
-    }
-
-    ${applyStyleModifiers(BUTTON_MODIFIERS)};
+    border: 2px solid ${props => props.theme.disabled};
+    color: ${props => props.theme.disabled};
+    cursor: not-allowed;
+  }
+  ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;
 
 export const TertiaryButton = styled(Button)`
-    background: none;
-    border: none;
-    color: ${props => props.primaryColor};
-
-    &:disabled {
-        background: none;
-        color: ${props => props.disabled};
-        cursor: not-allowed;
-    }
-
-    ${applyStyleModifiers(BUTTON_MODIFIERS)};
+  background: none;
+  border: 2px solid transparent;
+  color: ${props => props.theme.primaryColor};
+  &:disabled {
+    color: ${props => props.theme.disabled};
+    cursor: not-allowed;
+  }
+  ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;

@@ -8,13 +8,17 @@ import {
 } from './components';
 import { GlobalStyles, darkTheme, defaultTheme } from './utils'
 
+
 function App() {
 
   const [useDarkTheme, setUseDarkTheme] = useState(false);
 
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
-      <div className="App">
+        <PrimaryButton>Hello World</PrimaryButton>
+        <SecondaryButton>Hello World</SecondaryButton>
+        <TertiaryButton>Hello World</TertiaryButton>
+        
         <div style={{
           background: useDarkTheme ? defaultTheme.primaryColor : darkTheme.primaryColor,
           width: "100vw",
@@ -41,13 +45,9 @@ function App() {
             >
               Default theme
           </button>
-        <PrimaryButton modifiers={["small", "warning"]}>Hello World</PrimaryButton>
-        <SecondaryButton modifiers={["large", "warning", "secondaryButtonWarning"]}>Hello World</SecondaryButton>
-        <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>Hello World</TertiaryButton>
-        <SignupModal />
+        {/* <SignupModal /> */}
         <GlobalStyles />
         </div>
-      </div>
     </ThemeProvider>
   );
 }
