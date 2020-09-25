@@ -10,8 +10,8 @@ import { GlobalStyles, darkTheme, defaultTheme } from './utils'
 
 
 function App() {
-
   const [useDarkTheme, setUseDarkTheme] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
@@ -45,7 +45,16 @@ function App() {
             >
               Default theme
           </button>
-        {/* <SignupModal /> */}
+          <button style={{ 
+              margin: "0 16px 24px",
+              padding: "8px",
+              background: "none"
+            }}
+            onClick={() => setShowModal(true)}
+            >
+              Toggle Modal
+          </button>
+        <SignupModal showModal={showModal} />
         <GlobalStyles />
         </div>
     </ThemeProvider>
